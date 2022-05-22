@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-green: #5dfed6;
+  --green: #45e6bf;
+  --dark-gray: #343434;
+  --gray: #c4c4c4;
+  --light-gray: #e5e5e5;
+  --white: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
