@@ -8,8 +8,16 @@ export function Menu() {
       <img src={logoWhite} alt="SP Labs" className="menu__logo" />
       <nav className="menu__nav">
         <ul className="menu__list">
-          <li className="menu__item">Cases</li>
-          <li className="menu__item">Produto</li>
+          <li className="menu__item">
+            <a className="menu__link" href="#cases">
+              Cases
+            </a>
+          </li>
+          <li className="menu__item">
+            <a className="menu__link" href="#products">
+              Produtos
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

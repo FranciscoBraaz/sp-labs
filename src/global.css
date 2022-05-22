@@ -15,6 +15,7 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }
 
 button {
@@ -24,4 +25,10 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 108rem;
+  margin: 0 auto;
 }
