@@ -1,0 +1,17 @@
+.menu {
+  width: 100%;
+  max-width: 108rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 4.2rem auto 0rem;
+}
+
+.menu__list {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu__item {
+  list-style: none;
+}
