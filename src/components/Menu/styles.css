@@ -33,3 +33,9 @@
 .menu__link:hover {
   text-decoration-color: var(--white);
 }
+
+@media screen and (max-width: 1140px) {
+  .menu {
+    padding: 0rem 3rem;
+  }
+}

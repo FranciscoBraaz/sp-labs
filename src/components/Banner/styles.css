@@ -37,7 +37,7 @@
   font-size: 6.4rem;
   font-weight: bold;
   color: var(--white);
-  line-height: 8rem;
+  line-height: 7.2rem;
 }
 
 .banner__title--italic {
@@ -69,4 +69,32 @@
 
 .banner__button:hover {
   background-color: var(--green);
+}
+
+@media screen and (max-width: 680px) {
+  .banner__title {
+    font-size: 5.6rem;
+    letter-spacing: -0.015em;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .banner__button {
+    width: 100%;
+    max-width: 33rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .banner__title {
+    font-size: 5rem;
+    line-height: 6.2rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .banner__title {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
 }

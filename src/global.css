@@ -32,3 +32,9 @@ a {
   max-width: 108rem;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 1140px) {
+  .container {
+    margin: 0 3rem;
+  }
+}
