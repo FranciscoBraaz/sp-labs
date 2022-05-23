@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import api from '../../services/api';
 import { Select } from '../Select';
 import './styles.css';
 
@@ -8,16 +9,25 @@ export function ContactSection() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [info, setInfo] = useState('');
-  const [segment, setSegment] = useState('segment');
+  // eslint-disable-next-line
+  const [segment, setSegment] = useState('');
   const [agreedTerms, setAgreedTerms] = useState(false);
 
   const handleChangeSegment = useCallback((value) => {
     setSegment(value);
   }, []);
 
-  function handleSubmit() {
-    console.log(segment);
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    await api.post('/contact', {
+      name,
+    });
   }
+
+  // function checkIsDisabled() {
+  //   return !name || !email || !info || !segment || !agreedTerms ? true : false;
+  // }
 
   return (
     <section className="contact">
@@ -28,6 +38,7 @@ export function ContactSection() {
             <input
               className="contact__input"
               type="name"
+              required
               value={name}
               onChange={({ target }) => setName(target.value)}
               placeholder="Seu nome"
@@ -35,6 +46,7 @@ export function ContactSection() {
             <input
               className="contact__input"
               type="email"
+              required
               value={email}
               onChange={({ target }) => setEmail(target.value)}
               placeholder="Seu email"
@@ -46,12 +58,14 @@ export function ContactSection() {
             <textarea
               className="contact__input contact__input--textarea"
               type="info"
+              required
               value={info}
               onChange={({ target }) => setInfo(target.value)}
               placeholder="Fale um pouco sobre o seu negócio"
             />
             <label className="contact__terms">
               <input
+                required
                 type="checkbox"
                 className="contact__checkbox"
                 onChange={() => setAgreedTerms((prevState) => !prevState)}
@@ -62,7 +76,11 @@ export function ContactSection() {
                 utilização das minhas informações pelo SP Labs
               </span>
             </label>
-            <button className="contact__sumbmit" type="submit">
+            <button
+              className="contact__sumbmit"
+              // disabled={checkIsDisabled()}
+              type="submit"
+            >
               Enviar
             </button>
           </form>

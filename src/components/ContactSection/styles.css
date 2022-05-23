@@ -114,6 +114,10 @@
   transition: all 0.3s ease;
 }
 
-.contact__sumbmit:hover {
+.contact__sumbmit:disabled {
+  cursor: default;
+}
+
+.contact__sumbmit:hover:not([disabled]) {
   background-color: var(--green);
 }
