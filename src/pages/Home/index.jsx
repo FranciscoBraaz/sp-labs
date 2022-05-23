@@ -1,14 +1,16 @@
 import React from 'react';
-import { Banner } from '../../components/Banner';
-import { Cases } from '../../components/Cases';
+import { HeroSection } from '../../components/HeroSection';
+import { CasesSection } from '../../components/CasesSection';
 import { Menu } from '../../components/Menu';
+import { VideoSection } from '../../components/VideoSection';
 
 export function Home() {
   return (
     <div>
       <Menu />
-      <Banner />
-      <Cases />
+      <HeroSection />
+      <CasesSection />
+      <VideoSection />
     </div>
   );
 }

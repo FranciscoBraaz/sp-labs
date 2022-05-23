@@ -16,7 +16,7 @@ function Case({ title, description }) {
   );
 }
 
-export function Cases() {
+export function CasesSection() {
   const [cases, setCases] = useState([]);
 
   useEffect(() => {
@@ -48,7 +48,11 @@ export function Cases() {
         </div>
         <div className="cases__container-items">
           {cases.map((caseItem) => (
-            <Case title={caseItem.title} description={caseItem.description} />
+            <Case
+              key={caseItem.title}
+              title={caseItem.title}
+              description={caseItem.description}
+            />
           ))}
         </div>
       </div>
