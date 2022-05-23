@@ -5,6 +5,7 @@
     #5dfed6 0%,
     rgba(93, 254, 214, 0) 100%
   );
+  position: relative;
 }
 
 .contact__content {

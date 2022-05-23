@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ReactComponent as Dropdown } from '../../assets/images/arrow-down.svg';
 import './styles.css';
 
-export function Select({ handleChangeSegment, segments }) {
+export function Select({ segments }) {
   const [selectedValue, setSelectedValue] = useState('');
   const [selectIsOpen, setSelectIsOpen] = React.useState(false);
   const refSelect = React.useRef(null);
@@ -11,7 +11,6 @@ export function Select({ handleChangeSegment, segments }) {
   function handleChange(item) {
     setSelectedValue(item);
     setSelectIsOpen(false);
-    handleChangeSegment(item);
   }
 
   return (

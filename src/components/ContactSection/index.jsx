@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import api from '../../services/api';
+import { Modal } from '../Modal';
 import { Select } from '../Select';
 import './styles.css';
 
@@ -7,30 +8,41 @@ const segments = ['Tecnologia', 'Marketing', 'Direito', 'Engenharia'];
 
 export function ContactSection() {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [info, setInfo] = useState('');
-  // eslint-disable-next-line
-  const [segment, setSegment] = useState('');
   const [agreedTerms, setAgreedTerms] = useState(false);
-
-  const handleChangeSegment = useCallback((value) => {
-    setSegment(value);
-  }, []);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await api.post('/contact', {
-      name,
-    });
+    await api
+      .post('/contact', {
+        name,
+      })
+      .then(() => {
+        setModalMessage(`Obrigado pelo contato ${name}!`);
+      })
+      .catch(() => {
+        setModalMessage(`Ops, houve um problema no envio!`);
+      })
+      .finally(() => {
+        setModalIsOpen(true);
+      });
   }
 
-  // function checkIsDisabled() {
-  //   return !name || !email || !info || !segment || !agreedTerms ? true : false;
-  // }
+  const handleCloseModal = useCallback(() => {
+    setModalIsOpen(false);
+  }, []);
 
   return (
     <section className="contact">
+      {modalIsOpen && (
+        <Modal
+          handleClose={handleCloseModal}
+          message={modalMessage}
+          modalIsOpen={modalIsOpen}
+        />
+      )}
       <div className="container">
         <div className="contact__content">
           <h2 className="contact__title">Não fique parado, fale conosco</h2>
@@ -47,20 +59,13 @@ export function ContactSection() {
               className="contact__input"
               type="email"
               required
-              value={email}
-              onChange={({ target }) => setEmail(target.value)}
               placeholder="Seu email"
             />
-            <Select
-              handleChangeSegment={handleChangeSegment}
-              segments={segments}
-            />
+            <Select segments={segments} />
             <textarea
               className="contact__input contact__input--textarea"
               type="info"
               required
-              value={info}
-              onChange={({ target }) => setInfo(target.value)}
               placeholder="Fale um pouco sobre o seu negócio"
             />
             <label className="contact__terms">
