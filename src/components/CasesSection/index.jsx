@@ -40,7 +40,8 @@ export function CasesSection() {
         <div className="cases__container-title">
           <h2 className="cases__title">
             Problemas complexos. <br />
-            Soluções <strike>complexas</strike> <i>criativas_</i>
+            Soluções <span className="cases__strike">complexas</span>{' '}
+            <i>criativas_</i>
           </h2>
           <p className="cases__subtitle">
             Confira nossos cases de sucesso que vão além do mundo juridico.

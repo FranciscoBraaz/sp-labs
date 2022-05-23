@@ -15,6 +15,21 @@
   letter-spacing: -0.015em;
 }
 
+.cases__strike {
+  position: relative;
+  display: inline-block;
+}
+
+.cases__strike:after {
+  border-top: 2px solid #000;
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 50%;
+  left: 0;
+  margin-top: 3px;
+}
+
 .cases__subtitle {
   font-size: 1.8rem;
   letter-spacing: -0.015em;
@@ -78,7 +93,7 @@
     margin: 8rem auto 0rem;
   }
 
-  .cases__tile {
+  .cases__title {
     font-size: 3.2rem;
   }
 

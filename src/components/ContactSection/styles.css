@@ -17,6 +17,7 @@
 
 .contact__title {
   font-size: 3.6rem;
+  text-align: center;
   letter-spacing: -0.015em;
 }
 
@@ -129,4 +130,10 @@
 
 .contact__sumbmit:hover:not([disabled]) {
   background-color: var(--green);
+}
+
+@media screen and (max-width: 680px) {
+  .contact__title {
+    font-size: 3.2rem;
+  }
 }
