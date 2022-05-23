@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import { ReactComponent as ArrowRight } from '../../assets/images/arrow-right.svg';
 import './styles.css';
+import { CaseSkeleton } from '../CaseSkeleton';
 
 function Case({ title, description }) {
   return (
@@ -16,18 +17,34 @@ function Case({ title, description }) {
   );
 }
 
+function Skeleton() {
+  return (
+    <div className="cases__container-items">
+      <CaseSkeleton />
+      <CaseSkeleton />
+      <CaseSkeleton />
+    </div>
+  );
+}
+
 export function CasesSection() {
   const [cases, setCases] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     async function fetchCases() {
+      setIsLoading(true);
       await api
         .get('/cases')
         .then((response) => {
           setCases(response.data.cases);
         })
         .catch((error) => {
-          console.log(error);
+          setHasError(true);
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     }
 
@@ -47,15 +64,26 @@ export function CasesSection() {
             Confira nossos cases de sucesso que vão além do mundo juridico.
           </p>
         </div>
-        <div className="cases__container-items">
-          {cases.map((caseItem) => (
-            <Case
-              key={caseItem.title}
-              title={caseItem.title}
-              description={caseItem.description}
-            />
-          ))}
-        </div>
+
+        {isLoading ? (
+          <Skeleton />
+        ) : (
+          <div className="cases__container-items">
+            {hasError ? (
+              <p className="cases__error">
+                ❌ Não possível carregar nossos cases
+              </p>
+            ) : (
+              cases.map((caseItem) => (
+                <Case
+                  key={caseItem.title}
+                  title={caseItem.title}
+                  description={caseItem.description}
+                />
+              ))
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,0 +1,44 @@
+.skeleton {
+  width: 100%;
+  height: 100%;
+  max-width: 53.6rem;
+  max-height: 19rem;
+  overflow: hidden;
+}
+
+.skeleton__item {
+  width: 100%;
+  transform: translateX(-100px);
+  background-image: linear-gradient(90deg, #ccc 0px, #eee 50%, #ccc 100%);
+  background-color: #ccc;
+  background-size: 200%;
+  animation: loading 1.5s infinite;
+}
+
+.skeleton__item--title {
+  width: 70%;
+  height: 2.8rem;
+}
+
+.skeleton__item--description {
+  width: 62rem;
+  height: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+.skeleton__item--description:nth-child(2) {
+  margin-top: 1.6rem;
+}
+
+.skeleton__item:last-child {
+  width: 50%;
+}
+
+@keyframes loading {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -200%;
+  }
+}

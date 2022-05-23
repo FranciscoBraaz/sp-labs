@@ -30,7 +30,8 @@
   margin-top: 3px;
 }
 
-.cases__subtitle {
+.cases__subtitle,
+.cases__error {
   font-size: 1.8rem;
   letter-spacing: -0.015em;
 }
