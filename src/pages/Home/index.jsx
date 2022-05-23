@@ -3,6 +3,7 @@ import { HeroSection } from '../../components/HeroSection';
 import { CasesSection } from '../../components/CasesSection';
 import { Menu } from '../../components/Menu';
 import { VideoSection } from '../../components/VideoSection';
+import { ContactSection } from '../../components/ContactSection';
 
 export function Home() {
   return (
@@ -11,6 +12,7 @@ export function Home() {
       <HeroSection />
       <CasesSection />
       <VideoSection />
+      <ContactSection />
     </div>
   );
 }

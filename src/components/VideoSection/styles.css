@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   gap: 3.2rem;
+  padding: 8rem 0rem;
 }
 
 .video-section__container-text {
@@ -55,5 +56,6 @@
   .video-section__iframe {
     min-width: unset;
     min-height: unset;
+    width: 100%;
   }
 }
