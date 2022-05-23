@@ -28,6 +28,7 @@
   transition: all 0.3s ease;
   text-decoration: underline;
   text-decoration-color: transparent;
+  cursor: pointer;
 }
 
 .menu__link:hover {

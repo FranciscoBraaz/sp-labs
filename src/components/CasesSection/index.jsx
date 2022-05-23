@@ -35,7 +35,7 @@ export function CasesSection() {
   }, []);
 
   return (
-    <section className="cases">
+    <section id="casesSection" className="cases">
       <div className="container">
         <div className="cases__container-title">
           <h2 className="cases__title">

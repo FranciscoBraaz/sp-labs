@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import logoWhite from '../../assets/images/logo-white.svg';
 import './styles.css';
 
@@ -9,9 +10,15 @@ export function Menu() {
       <nav className="menu__nav">
         <ul className="menu__list">
           <li className="menu__item">
-            <a className="menu__link" href="#cases">
+            <Link
+              to="casesSection"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="menu__link"
+            >
               Cases
-            </a>
+            </Link>
           </li>
           <li className="menu__item">
             <a className="menu__link" href="#products">
