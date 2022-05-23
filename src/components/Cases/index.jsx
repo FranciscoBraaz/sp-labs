@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import api from '../../services/api';
 import { ReactComponent as ArrowRight } from '../../assets/images/arrow-right.svg';
 import './styles.css';
 
+function Case({ title, description }) {
+  return (
+    <div className="cases__item">
+      <h4 className="cases__item__title">{title}</h4>
+      <p className="cases__item__description">{description}</p>
+      <button className="cases__item__button">
+        Acesse
+        <ArrowRight />
+      </button>
+    </div>
+  );
+}
+
 export function Cases() {
+  const [cases, setCases] = useState([]);
+
+  useEffect(() => {
+    async function fetchCases() {
+      await api
+        .get('/cases')
+        .then((response) => {
+          setCases(response.data.cases);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    fetchCases();
+  }, []);
+
   return (
     <section className="cases">
       <div className="container">
@@ -16,30 +47,9 @@ export function Cases() {
           </p>
         </div>
         <div className="cases__container-items">
-          <div className="cases__item">
-            <h4 className="cases__item__title">Solução 1</h4>
-            <p className="cases__item__description">
-              Repita comigo: Não vou esquecer de prestar atenção se está tudo
-              alinhadinho. Não vou esquecer de prestar atenção se está tudo
-              alinhado. Não vou esquecer de prestar atenção.
-            </p>
-            <button className="cases__item__button">
-              Acesse
-              <ArrowRight />
-            </button>
-          </div>
-          <div className="cases__item">
-            <h4 className="cases__item__title">Solução 1</h4>
-            <p className="cases__item__description">
-              Repita comigo: Não vou esquecer de prestar atenção se está tudo
-              alinhadinho. Não vou esquecer de prestar atenção se está tudo
-              alinhado. Não vou esquecer de prestar atenção.
-            </p>
-            <button className="cases__item__button">
-              Acesse
-              <ArrowRight />
-            </button>
-          </div>
+          {cases.map((caseItem) => (
+            <Case title={caseItem.title} description={caseItem.description} />
+          ))}
         </div>
       </div>
     </section>
