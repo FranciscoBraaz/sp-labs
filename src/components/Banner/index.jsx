@@ -9,7 +9,9 @@ export function Banner() {
           <div className="banner__content">
             <h2 className="banner__title">
               Imagine, crie, implemente e{' '}
-              <span className=" banner__title--italic">evolua</span>
+              <span className="banner__title banner__title--italic">
+                evolua
+              </span>
             </h2>
             <p className="banner__subtitle">
               Porque não basta resolver apenas os conflitos do mundo do direito

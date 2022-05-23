@@ -1,5 +1,6 @@
 import React from 'react';
 import { Banner } from '../../components/Banner';
+import { Cases } from '../../components/Cases';
 import { Menu } from '../../components/Menu';
 
 export function Home() {
@@ -7,6 +8,7 @@ export function Home() {
     <div>
       <Menu />
       <Banner />
+      <Cases />
     </div>
   );
 }

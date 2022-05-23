@@ -20,6 +20,7 @@ html {
 
 button {
   cursor: pointer;
+  font-family: 'Roboto';
 }
 
 a {
@@ -35,6 +36,7 @@ a {
 
 @media screen and (max-width: 1140px) {
   .container {
-    margin: 0 3rem;
+    margin: 0;
+    padding: 0rem 3rem;
   }
 }
