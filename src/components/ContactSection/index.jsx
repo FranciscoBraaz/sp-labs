@@ -66,14 +66,12 @@ export function ContactSection() {
               <input
                 className="contact__input"
                 type="email"
-                required
                 placeholder="Seu email"
               />
               <Select segments={segments} />
               <textarea
                 className="contact__input contact__input--textarea"
                 type="info"
-                required
                 placeholder="Fale um pouco sobre o seu negócio"
               />
               <label className="contact__terms">

@@ -19,14 +19,16 @@
   border-radius: 4px;
   position: relative;
   padding: 1.6rem;
+  margin: 0 3rem;
 }
 
 .modal__message {
   font-size: 2.4rem;
   letter-spacing: -0.015em;
   line-height: 2.3rem;
-  margin-top: 2.6rem;
-  text-align: center;
+  margin-top: 1.6rem;
+  text-align: start;
+  padding: 1rem;
 }
 
 .modal__header {
@@ -39,4 +41,14 @@
   background-color: transparent;
   border: none;
   margin: 0;
+}
+
+@media screen and (max-width: 680px) {
+  .modal {
+    min-height: 15.6rem;
+  }
+
+  .modal__message {
+    line-height: 3.2rem;
+  }
 }

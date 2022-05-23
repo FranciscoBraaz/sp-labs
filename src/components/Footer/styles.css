@@ -36,7 +36,7 @@
 .footer__anchor {
   font-size: 1.6rem;
   letter-spacing: -0.015em;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   text-decoration: underline;
   text-decoration-color: transparent;
   color: var(--dark-gray);
