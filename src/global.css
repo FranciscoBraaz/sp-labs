@@ -28,6 +28,10 @@ a {
   color: inherit;
 }
 
+ul {
+  list-style: none;
+}
+
 .container {
   width: 100%;
   max-width: 108rem;
