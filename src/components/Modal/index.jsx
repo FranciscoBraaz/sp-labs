@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles.css';
 import { ReactComponent as Close } from '../../assets/images/close.svg';
 
@@ -14,13 +14,20 @@ export function Modal({ handleClose, message, modalIsOpen }) {
     [modalIsOpen, handleClose],
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [handleClickOutside]);
+
+  useEffect(() => {
+    if (modalIsOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '15px';
+    }
+  }, [modalIsOpen]);
 
   return (
     <div className="overlay">
