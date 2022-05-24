@@ -2,7 +2,7 @@
   padding: 8rem 0rem;
   background: radial-gradient(
     25.07% 41.67% at 31.63% 88.91%,
-    #5dfed6 0%,
+    var(--green) 0%,
     rgba(93, 254, 214, 0) 100%
   );
   position: relative;
@@ -133,6 +133,14 @@
 }
 
 @media screen and (max-width: 680px) {
+  .contact {
+    background: radial-gradient(
+      49.9% 23.09% at 0% 100%,
+      var(--green) 0%,
+      rgba(93, 254, 214, 0) 100%
+    );
+  }
+
   .contact__title {
     font-size: 3.2rem;
   }
