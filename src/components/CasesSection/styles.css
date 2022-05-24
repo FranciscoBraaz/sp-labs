@@ -102,6 +102,10 @@
     line-height: 3rem;
   }
 
+  .cases__strike:after {
+    margin-top: 2px;
+  }
+
   .cases__container-items {
     justify-items: center;
     grid-template-columns: 1fr;

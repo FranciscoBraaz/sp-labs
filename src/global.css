@@ -18,6 +18,11 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 button {
   cursor: pointer;
   font-family: 'Roboto';
