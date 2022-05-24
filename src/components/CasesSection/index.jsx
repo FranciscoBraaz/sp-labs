@@ -7,9 +7,9 @@ import { CaseSkeleton } from '../CaseSkeleton';
 function Case({ title, description }) {
   return (
     <div className="cases__item">
-      <h4 className="cases__item__title">{title}</h4>
-      <p className="cases__item__description">{description}</p>
-      <button className="cases__item__button">
+      <h4 className="cases__item-title">{title}</h4>
+      <p className="cases__item-description">{description}</p>
+      <button className="cases__item-button">
         Acesse
         <ArrowRight />
       </button>
