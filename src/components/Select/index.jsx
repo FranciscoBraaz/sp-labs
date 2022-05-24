@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as Dropdown } from '../../assets/images/arrow-down.svg';
 import './styles.css';
 
-export function Select({ segments }) {
+export function Select({ segments, handleClose }) {
   const [selectedValue, setSelectedValue] = useState('');
   const [selectIsOpen, setSelectIsOpen] = React.useState(false);
   const refSelect = React.useRef(null);
@@ -12,6 +12,27 @@ export function Select({ segments }) {
     setSelectedValue(item);
     setSelectIsOpen(false);
   }
+
+  const handleClickOutside = React.useCallback(
+    (event) => {
+      if (
+        selectIsOpen &&
+        !refDropdown.current.contains(event.target) &&
+        !refSelect.current.contains(event.target)
+      ) {
+        setSelectIsOpen(false);
+      }
+    },
+    [selectIsOpen],
+  );
+
+  useEffect(() => {
+    if (typeof window != 'undefined') {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [handleClickOutside]);
 
   return (
     <div className="select" ref={refSelect}>
@@ -24,14 +45,7 @@ export function Select({ segments }) {
         <Dropdown />
       </button>
       {selectIsOpen && (
-        <ul
-          className="select__list"
-          // style={{
-          //   height: condition ? 'calc(4*3.6rem)' : 'unset',
-          //   overflowY: condition ? 'auto' : 'unset',
-          // }}
-          ref={refDropdown}
-        >
+        <ul className="select__list" ref={refDropdown}>
           {segments.map((segment) => {
             return (
               <li className="select__option" key={segment}>
