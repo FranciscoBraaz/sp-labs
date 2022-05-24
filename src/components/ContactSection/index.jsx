@@ -37,7 +37,7 @@ export function ContactSection() {
   const handleCloseModal = useCallback(() => {
     setModalIsOpen(false);
     document.body.style.paddingRight = '0px';
-    document.body.style.overflow = 'visible';
+    document.body.style.overflowY = 'visible';
     setModalMessage('');
   }, []);
 

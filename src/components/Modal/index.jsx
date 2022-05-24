@@ -24,7 +24,7 @@ export function Modal({ handleClose, message, modalIsOpen }) {
 
   useEffect(() => {
     if (modalIsOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
       document.body.style.paddingRight = '15px';
     }
   }, [modalIsOpen]);
