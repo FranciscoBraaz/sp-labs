@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ReactComponent as Dropdown } from '../../assets/images/arrow-down.svg';
 import './styles.css';
 
-export function Select({ segments, handleClose }) {
+export function Select({ segments }) {
   const [selectedValue, setSelectedValue] = useState('');
   const [selectIsOpen, setSelectIsOpen] = React.useState(false);
   const refSelect = React.useRef(null);
