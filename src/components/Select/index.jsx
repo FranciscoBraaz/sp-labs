@@ -50,7 +50,7 @@ export function Select({ segments }) {
         className="select__default"
         onClick={() => setSelectIsOpen(!selectIsOpen)}
       >
-        <span>{selectedValue ? selectedValue : 'Selecione uma resposta'}</span>
+        <span>{selectedValue ? selectedValue : 'Seu segmento'}</span>
         <Dropdown />
       </button>
       {selectIsOpen && (
