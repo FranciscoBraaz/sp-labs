@@ -34,6 +34,15 @@ export function Select({ segments }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [handleClickOutside]);
 
+  useEffect(() => {
+    let select = refSelect.current;
+    if (selectIsOpen) {
+      select.className = 'select select--focus';
+    } else {
+      select.className = 'select';
+    }
+  }, [selectIsOpen]);
+
   return (
     <div className="select" ref={refSelect}>
       <button

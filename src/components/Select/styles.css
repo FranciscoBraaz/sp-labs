@@ -19,11 +19,11 @@
   font-size: 1.6rem;
 }
 
-.select:hover {
+.select:hover:not(.select--focus) {
   border-color: var(--gray);
 }
 
-.select:focus {
+.select--focus {
   border-color: var(--green);
 }
 
