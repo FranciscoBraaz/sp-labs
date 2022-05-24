@@ -26,10 +26,15 @@
     # Baixe as dependências com:
     yarn install
 
-### ⚠️ Aviso:
-Para executar o projeto localmente será necessário utilizar a API Cors-anywhere do Heroku, para evitar erro de cors com a api sp-labs. 
+### ⚠️ Avisos:
+1-) Para executar o projeto localmente será necessário utilizar a API Cors-anywhere do Heroku, para evitar erro de cors com a api sp-labs. 
 Para isso acesse [este](https://cors-anywhere.herokuapp.com/corsdemo) site e clique no botão "Request  temporary access to the demo server".
 OBS: Isso SOMENTE é necessário em localhost.
+
+2-) No footer, na parte dos links, temos um espaço em branco maior no lado direito, porque segundo o design do figma, cada um dos blocos de links (SP Labs e Sem Processo) possuem uma largura definida para dar espaçamento e eu decidi fazer exatamente igual ao layout.
+
+<img src="https://i.imgur.com/wPLGpCT.png" alt="Footer" width="50%"/> 
+
 
 ##
 👨‍💻 Desenvolvido por [Francisco Braz](https://github.com/FranciscoBraaz)
