@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import logoWhite from '../../assets/images/logo-white.svg';
-import './styles.css';
+import './styles.scss';
 
 export function Menu() {
   return (

@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-let url;
+// let url;
 
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-  url = 'https://cors-anywhere.herokuapp.com/https://sp-labs.vercel.app/api';
-} else {
-  url = 'https://sp-labs.vercel.app/api';
-}
+// if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+//   url = 'https://sp-labs.vercel.app/api';
+// } else {
+//   url = 'https://sp-labs.vercel.app/api';
+// }
 
 const api = axios.create({
-  baseURL: url,
+  baseURL: 'https://sp-labs.vercel.app/api',
 });
 
 export default api;
