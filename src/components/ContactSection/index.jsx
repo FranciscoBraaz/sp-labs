@@ -51,51 +51,49 @@ export function ContactSection() {
         />
       )}
       <section className="contact">
-        <div className="container">
-          <div className="contact__content">
-            <h2 className="contact__title">Não fique parado, fale conosco</h2>
-            <form className="form" onSubmit={handleSubmit}>
+        <div className="container contact__content">
+          <h2 className="contact__title">Não fique parado, fale conosco</h2>
+          <form className="form" onSubmit={handleSubmit}>
+            <input
+              className="form__input"
+              type="name"
+              required
+              value={name}
+              onChange={({ target }) => setName(target.value)}
+              placeholder="Seu nome"
+            />
+            <input
+              className="form__input"
+              type="email"
+              placeholder="Seu email"
+            />
+            <Select segments={segments} />
+            <textarea
+              className="form__input form__input--textarea"
+              type="info"
+              placeholder="Fale um pouco sobre o seu negócio"
+            />
+            <label className="form__terms">
               <input
-                className="form__input"
-                type="name"
                 required
-                value={name}
-                onChange={({ target }) => setName(target.value)}
-                placeholder="Seu nome"
+                type="checkbox"
+                className="form__checkbox"
+                onChange={() => setAgreedTerms((prevState) => !prevState)}
+                checked={agreedTerms}
               />
-              <input
-                className="form__input"
-                type="email"
-                placeholder="Seu email"
-              />
-              <Select segments={segments} />
-              <textarea
-                className="form__input form__input--textarea"
-                type="info"
-                placeholder="Fale um pouco sobre o seu negócio"
-              />
-              <label className="form__terms">
-                <input
-                  required
-                  type="checkbox"
-                  className="form__checkbox"
-                  onChange={() => setAgreedTerms((prevState) => !prevState)}
-                  checked={agreedTerms}
-                />
-                <span className="form__declaration">
-                  Declaro que conheço a Política de Privacidade e autorizo a
-                  utilização das minhas informações pelo SP Labs
-                </span>
-              </label>
-              <button
-                className="form__sumbmit"
-                disabled={isSubmiting}
-                type="submit"
-              >
-                {isSubmiting ? <Loader /> : 'Enviar'}
-              </button>
-            </form>
-          </div>
+              <span className="form__declaration">
+                Declaro que conheço a Política de Privacidade e autorizo a
+                utilização das minhas informações pelo SP Labs
+              </span>
+            </label>
+            <button
+              className="form__sumbmit"
+              disabled={isSubmiting}
+              type="submit"
+            >
+              {isSubmiting ? <Loader /> : 'Enviar'}
+            </button>
+          </form>
         </div>
       </section>
     </>
