@@ -18,11 +18,13 @@ function Case({ title, description }) {
 }
 
 function Skeleton() {
+  const skeletons = Array.from(Array(4).keys());
+
   return (
     <div className="cases__grid">
-      <CaseSkeleton />
-      <CaseSkeleton />
-      <CaseSkeleton />
+      {skeletons.map((skeleton) => (
+        <CaseSkeleton key={skeleton} />
+      ))}
     </div>
   );
 }

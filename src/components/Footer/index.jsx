@@ -1,15 +1,15 @@
 import React from 'react';
-import './styles.css';
+import './styles.scss';
 import footerImg from '../../assets/images/logo-black.svg';
 
 function FooterGuide({ topic, links }) {
   return (
-    <div className="footer__guide">
-      <h4 className="footer__topic">{topic}</h4>
-      <ul className="footer__links">
+    <div className="guide">
+      <h4 className="guide__topic">{topic}</h4>
+      <ul className="guide__links">
         {links.map((link) => (
           <li key={link}>
-            <a className="footer__anchor" href="/">
+            <a className="guide__anchor" href="/">
               {link}
             </a>
           </li>
