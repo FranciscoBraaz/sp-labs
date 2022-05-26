@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ReactComponent as Dropdown } from '../../assets/images/arrow-down.svg';
-import './styles.css';
+import './styles.scss';
 
 export function Select({ segments }) {
   const [selectedValue, setSelectedValue] = useState('');
