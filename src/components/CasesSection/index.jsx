@@ -19,7 +19,7 @@ function Case({ title, description }) {
 
 function Skeleton() {
   return (
-    <div className="cases__container-items">
+    <div className="cases__grid">
       <CaseSkeleton />
       <CaseSkeleton />
       <CaseSkeleton />
@@ -53,7 +53,7 @@ export function CasesSection() {
 
   return (
     <section id="casesSection" className="cases">
-      <div className="container">
+      <div className="container cases__wrapper">
         <div className="cases__header">
           <h2 className="cases__title">
             Problemas complexos. <br />
@@ -68,7 +68,7 @@ export function CasesSection() {
         {isLoading ? (
           <Skeleton />
         ) : (
-          <div className="cases__container-items">
+          <div className="cases__grid">
             {hasError ? (
               <p className="cases__error">
                 ❌ Não possível carregar nossos cases
