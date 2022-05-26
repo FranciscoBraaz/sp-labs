@@ -20,6 +20,7 @@
   position: relative;
   padding: 1.6rem;
   margin: 0 3rem;
+  animation: modalEntry 0.2s ease;
 
   &__message {
     font-size: 2.4rem;
@@ -50,5 +51,15 @@
     &__message {
       line-height: 3.2rem;
     }
+  }
+}
+
+@keyframes modalEntry {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

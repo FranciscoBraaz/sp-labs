@@ -24,8 +24,13 @@ export function Modal({ handleClose, message, modalIsOpen }) {
 
   useEffect(() => {
     if (modalIsOpen) {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+
       document.body.style.overflowY = 'hidden';
-      document.body.style.paddingRight = '15px';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
     }
   }, [modalIsOpen]);
 
