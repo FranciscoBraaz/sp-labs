@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './styles.css';
+import './styles.scss';
 import { ReactComponent as Close } from '../../assets/images/close.svg';
 
 export function Modal({ handleClose, message, modalIsOpen }) {
