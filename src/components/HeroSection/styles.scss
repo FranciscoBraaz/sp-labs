@@ -43,6 +43,27 @@
       font-weight: 400;
       font-family: 'Bodoni Moda', serif;
     }
+
+    @media (max-width: 680px) {
+      & {
+        font-size: 5.6rem;
+        letter-spacing: unset;
+      }
+    }
+
+    @media screen and (max-width: 350px) {
+      & {
+        font-size: 5rem;
+        line-height: 6.2rem;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      & {
+        font-size: 4rem;
+        line-height: 5.2rem;
+      }
+    }
   }
 
   &__subtitle {
@@ -71,33 +92,12 @@
     &:hover {
       background-color: var(--green);
     }
-  }
-}
 
-@media screen and (max-width: 680px) {
-  .hero__title {
-    font-size: 5.6rem;
-    letter-spacing: unset;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .hero__button {
-    width: 100%;
-    max-width: 33rem;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .hero__title {
-    font-size: 5rem;
-    line-height: 6.2rem;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .hero__title {
-    font-size: 4rem;
-    line-height: 5.2rem;
+    @media (max-width: 390px) {
+      & {
+        width: 100%;
+        max-width: 33rem;
+      }
+    }
   }
 }
