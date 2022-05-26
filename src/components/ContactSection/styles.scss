@@ -132,10 +132,12 @@
     text-transform: uppercase;
     color: var(--dark-gray);
     letter-spacing: 0.1em;
+    line-height: 150%;
     outline: none;
     border: none;
     border-radius: 4px;
     transition: all 0.3s ease;
+    gap: 8px;
 
     &:disabled {
       cursor: default;
