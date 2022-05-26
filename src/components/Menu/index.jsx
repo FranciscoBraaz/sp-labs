@@ -14,7 +14,7 @@ export function Menu() {
               to="casesSection"
               smooth={true}
               duration={500}
-              offset={-50}
+              offset={0}
               className="menu__link"
             >
               Cases
