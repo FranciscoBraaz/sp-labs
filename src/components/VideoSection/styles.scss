@@ -1,0 +1,62 @@
+.video-section {
+  background-color: #f8f8f8;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    padding: 8rem 0rem;
+  }
+
+  &__container-text {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 6.4rem;
+  }
+
+  &__description {
+    line-height: 3rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.015em;
+    margin-top: 1.6rem;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  &__iframe {
+    border: none;
+    width: 51.2rem;
+    height: 29.7rem;
+  }
+
+  @media (max-width: 1024px) {
+    &__content {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 680px) {
+    &__title {
+      font-size: 3.2rem;
+    }
+
+    &__iframe {
+      width: auto;
+      height: auto;
+      min-width: 33rem;
+      min-height: 19.1rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &__iframe {
+      min-width: unset;
+      min-height: unset;
+      width: 100%;
+    }
+  }
+}
