@@ -3,7 +3,7 @@ import api from '../../services/api';
 import { Loader } from '../Loader';
 import { Modal } from '../Modal';
 import { Select } from '../Select';
-import './styles.css';
+import './styles.scss';
 
 const segments = ['Tecnologia', 'Marketing', 'Direito', 'Engenharia'];
 
@@ -54,9 +54,9 @@ export function ContactSection() {
         <div className="container">
           <div className="contact__content">
             <h2 className="contact__title">Não fique parado, fale conosco</h2>
-            <form className="contact__form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
               <input
-                className="contact__input"
+                className="form__input"
                 type="name"
                 required
                 value={name}
@@ -64,31 +64,31 @@ export function ContactSection() {
                 placeholder="Seu nome"
               />
               <input
-                className="contact__input"
+                className="form__input"
                 type="email"
                 placeholder="Seu email"
               />
               <Select segments={segments} />
               <textarea
-                className="contact__input contact__input--textarea"
+                className="form__input form__input--textarea"
                 type="info"
                 placeholder="Fale um pouco sobre o seu negócio"
               />
-              <label className="contact__terms">
+              <label className="form__terms">
                 <input
                   required
                   type="checkbox"
-                  className="contact__checkbox"
+                  className="form__checkbox"
                   onChange={() => setAgreedTerms((prevState) => !prevState)}
                   checked={agreedTerms}
                 />
-                <span className="contact__declaration">
+                <span className="form__declaration">
                   Declaro que conheço a Política de Privacidade e autorizo a
                   utilização das minhas informações pelo SP Labs
                 </span>
               </label>
               <button
-                className="contact__sumbmit"
+                className="form__sumbmit"
                 disabled={isSubmiting}
                 type="submit"
               >
