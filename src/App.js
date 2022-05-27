@@ -1,5 +1,5 @@
-import './global.css';
 import { Home } from './pages/Home';
+import './global.scss';
 
 function App() {
   return <Home />;
