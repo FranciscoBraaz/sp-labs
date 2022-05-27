@@ -23,7 +23,7 @@
    ### Instalando dependências
    
 
-    # Baixe as dependências com:
+    # Instale as dependências com:
     yarn install
 
 ### ⚠️ Avisos:
